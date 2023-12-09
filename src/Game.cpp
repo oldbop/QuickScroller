@@ -1,4 +1,5 @@
 #include "Game.hpp"
+#include <SFML/Graphics/Rect.hpp>
 #include <iostream>
 
 namespace qs {
@@ -14,6 +15,9 @@ namespace qs {
       desktop.height / 2 - WINDOW_HEIGHT / 2));
 
     m_Window.setFramerateLimit(60);
+
+    m_View.reset(sf::FloatRect(0, 0, WINDOW_WIDTH * SCALE, WINDOW_HEIGHT * SCALE));
+    m_Window.setView(m_View);
   }
 
   void Game::play() {
