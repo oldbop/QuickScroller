@@ -1,4 +1,6 @@
 #include "Game.hpp"
+#include "Object.hpp"
+#include "Entity.hpp"
 #include <SFML/Graphics/Rect.hpp>
 #include <iostream>
 
@@ -22,7 +24,14 @@ namespace qs {
 
   void Game::play() {
 
-    if(!(m_Bean.initialise())) {
+    Object background;
+    Entity bean(50);
+
+    if(!(background.initialise("../resources/back.png"))) {
+      std::cout << "Background initialisation failed\n" << std::flush;
+    }
+
+    if(!(bean.initialise("../resources/bean.png"))) {
       std::cout << "Entity initialisation failed\n" << std::flush;
       return;
     }
@@ -42,8 +51,8 @@ namespace qs {
         }
       }
 
-      m_Window.clear(sf::Color(75, 150, 200, 255));
-      m_Window.draw(m_Bean);
+      m_Window.draw(background);
+      m_Window.draw(bean);
       m_Window.display();
     }
   }
