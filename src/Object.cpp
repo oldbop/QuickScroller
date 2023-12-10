@@ -2,9 +2,12 @@
 
 namespace qs {
 
-  bool Object::initialise(const std::string& texture) {
+  Object::Object(const std::string& texture)
+    : m_TexturePath(texture) {}
 
-    if(!(m_Texture.loadFromFile(texture))) {
+  bool Object::initialise() {
+
+    if(!(m_Texture.loadFromFile(m_TexturePath))) {
       return false;
     }
     m_Sprite.setTexture(m_Texture);

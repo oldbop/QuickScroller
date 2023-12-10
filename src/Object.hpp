@@ -12,12 +12,14 @@ namespace qs {
 
   class Object : public sf::Drawable {
   public:
+    Object(const std::string& texture);
+    virtual bool initialise();
     virtual ~Object() {}
-    virtual bool initialise(const std::string& texture);
   protected:
     virtual void draw(sf::RenderTarget &target, sf::RenderStates states) const override;
     sf::Texture m_Texture;
     sf::Sprite m_Sprite;
+    std::string m_TexturePath;
   };
 }
 

@@ -24,14 +24,18 @@ namespace qs {
 
   void Game::play() {
 
-    Object background;
-    Entity bean(50);
+    /*
+    Object background("../resources/back.png");
 
-    if(!(background.initialise("../resources/back.png"))) {
+    if(!(background.initialise())) {
       std::cout << "Background initialisation failed\n" << std::flush;
+      return;
     }
+    */
 
-    if(!(bean.initialise("../resources/bean.png"))) {
+    Entity bean("../resources/green16.png", "Beany", 50);
+
+    if(!(bean.initialise())) {
       std::cout << "Entity initialisation failed\n" << std::flush;
       return;
     }
@@ -51,7 +55,7 @@ namespace qs {
         }
       }
 
-      m_Window.draw(background);
+      //m_Window.draw(background);
       m_Window.draw(bean);
       m_Window.display();
     }

@@ -9,7 +9,7 @@ namespace qs {
 
   const int WINDOW_WIDTH = 1280;
   const int WINDOW_HEIGHT = 720;
-  const float SCALE = 0.25f;
+  const float SCALE = 0.5f;
   const std::string WINDOW_TITLE = "QuickScroller";
 
   class Game {

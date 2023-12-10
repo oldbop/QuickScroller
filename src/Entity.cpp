@@ -2,6 +2,8 @@
 
 namespace qs {
 
-  Entity::Entity(int health)
-    : m_Health(health) {}
+  Entity::Entity(const std::string& texture, const std::string& name, int health)
+    : Object(texture)
+    , m_Name(name)
+    , m_Health(health) {}
 }
