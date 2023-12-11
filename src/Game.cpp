@@ -40,6 +40,8 @@ namespace qs {
       return;
     }
 
+    bean.setPosition(624.f, 344.f);
+
     while(m_Window.isOpen()) {
 
       sf::Event event;
@@ -56,6 +58,8 @@ namespace qs {
       }
 
       //m_Window.draw(background);
+
+      m_Window.clear();
       m_Window.draw(bean);
       m_Window.display();
     }
